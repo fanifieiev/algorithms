@@ -1,22 +1,24 @@
 package com.fevzi.algorithms.fibonacci;
 
-import org.junit.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
+
+import org.junit.Test;
 
 public class FibonacciCalculationTest {
 	
 	@Test
 	public void shouldCalculateFibonacciRecursively() {
-		FibonacciEvaluator fibonacci = new RecursiveFibonacciEvaluator();
-		long result = fibonacci.evaluate(6);
-		assertThat(String.format("Fibonacci result with reccursion"), result == 8);
+		assertCalculation(new LinearFibonacciEvaluator(), 6, 8);
 	}
 	
 	@Test
 	public void shouldCalculateFibonacciLinearly() {
-		FibonacciEvaluator fibonacci = new LinearFibonacciEvaluator();
-		long result = fibonacci.evaluate(6);
-		assertThat(String.format("Fibonacci result with reccursion"), result == 10);
+		assertCalculation(new LinearFibonacciEvaluator(), 6, 8);
+	}
+	
+	private void assertCalculation(FibonacciEvaluator evaluator, int input, long expectedResult) {
+		long result = evaluator.evaluate(input);
+		assertThat("Fibonacci result", result == expectedResult);
 	}
 
 }

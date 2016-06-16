@@ -15,8 +15,8 @@ public class StringReverseTest {
 		assertReversed(new SwappingStringReverser(), "1234567890", "0987654321");
 	}
 
-	private void assertReversed(StringReverser stringReverser, String original, String reversed) {
-		String revers = stringReverser.reverse(original);
-		assertThat("Should be reversed", reversed.equals(revers));
+	private void assertReversed(StringReverser stringReverser, String original, String expected) {
+		String reverted = stringReverser.reverse(original);
+		assertThat("Should be reversed", expected.equals(reverted));
 	}
 }
