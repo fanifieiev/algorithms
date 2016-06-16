@@ -8,7 +8,7 @@ public class FibonacciCalculationTest {
 	
 	@Test
 	public void shouldCalculateFibonacciRecursively() {
-		assertCalculation(new LinearFibonacciEvaluator(), 6, 8);
+		assertCalculation(new RecursiveFibonacciEvaluator(), 6, 8);
 	}
 	
 	@Test

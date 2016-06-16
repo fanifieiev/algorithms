@@ -9,4 +9,8 @@ public interface CList<E> {
 	int size();
 	
 	E get(int position);
+	
+	boolean remove(E element);
+	
+	boolean remove(int index);
 }

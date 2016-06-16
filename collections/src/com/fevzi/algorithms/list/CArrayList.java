@@ -47,4 +47,16 @@ public final class CArrayList<E> implements CList<E> {
 		return null;
 	}
 
+	@Override
+	public boolean remove(E element) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean remove(int index) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }
