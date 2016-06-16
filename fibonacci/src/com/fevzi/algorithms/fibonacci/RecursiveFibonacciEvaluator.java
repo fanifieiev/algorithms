@@ -1,6 +1,6 @@
 package com.fevzi.algorithms.fibonacci;
 
-public final class RecursiveFibonacci implements FibonacciEvaluator {
+public final class RecursiveFibonacciEvaluator implements FibonacciEvaluator {
 
 	@Override
 	public long evaluate(int n) {

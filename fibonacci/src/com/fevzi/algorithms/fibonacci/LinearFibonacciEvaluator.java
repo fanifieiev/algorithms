@@ -7,16 +7,16 @@ public final class LinearFibonacciEvaluator implements FibonacciEvaluator {
 		if (n <= 1) {
 			return n;
 		} else {
-			long a = 0;
-			long b = 1;
+			long first = 1;
+			long second = 1;
 
-			for (int i = 2; i <= n; i++) {
-				a = a + b;
-				b = b + a;
+			long current = 0;
+			for (int i = 3; i <= n; i++) {
+				current = first + second;
+				first = second;
+				second = current;
 			}
-			return a + b;
+			return current;
 		}
-
 	}
-
 }

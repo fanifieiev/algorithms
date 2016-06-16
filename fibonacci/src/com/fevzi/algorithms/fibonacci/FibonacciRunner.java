@@ -8,8 +8,8 @@ public class FibonacciRunner {
 	public static void main(String[] args) {
 		Instant instant = Instant.now(); 
 		
-		FibonacciEvaluator evaluator = new RecursiveFibonacci();
-		final long result = evaluator.evaluate(30);
+		FibonacciEvaluator evaluator = new RecursiveFibonacciEvaluator();
+		final long result = evaluator.evaluate(6);
 		
 		System.out.println(String.format("Execution took '%s'ms with result='%d'", 
 				Duration.between(instant, Instant.now()).toMillis(), result));
