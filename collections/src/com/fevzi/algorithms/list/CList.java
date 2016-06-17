@@ -13,4 +13,6 @@ public interface CList<E> {
 	boolean remove(E element);
 	
 	boolean remove(int index);
+	
+	boolean isEmpty();
 }

@@ -59,4 +59,9 @@ public final class CArrayList<E> implements CList<E> {
 		return false;
 	}
 
+	@Override
+	public boolean isEmpty() {
+		return size == 0;
+	}
+
 }

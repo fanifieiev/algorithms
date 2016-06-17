@@ -9,7 +9,7 @@ public final class CLinkedList<E> implements CList<E> {
 	}
 
 	public CLinkedList(Node<E> node) {
-		this.head = node;
+		addNode(node);
 	}
 
 	@Override
@@ -34,17 +34,7 @@ public final class CLinkedList<E> implements CList<E> {
 	@Override
 	public boolean add(E element) {
 		Node<E> node = new Node<>(element);
-		if (head == null) {
-			head = node;
-		} else {
-			Node<E> tempNode = head;
-			while (tempNode.next != null) {
-				tempNode = tempNode.next;
-			}
-			tempNode.next = node;
-		}
-		size++;
-		return true;
+		return addNode(node);
 	}
 
 	@Override
@@ -60,22 +50,40 @@ public final class CLinkedList<E> implements CList<E> {
 
 	@Override
 	public boolean remove(E element) {
-		return false;
+		Node<E> node = getNode(element);
+		return removeNode(node);
 	}
 
 	@Override
 	public boolean remove(int index) {
-		Node<E> element = getNode(index);
-		if (element != null) {
-			
-			
-			
-			element.next = null;
-			element = null;
-			size--;
-			return true;
+		Node<E> node = getNode(index);
+		return removeNode(node);
+	}
+
+	@Override
+	public boolean isEmpty() {
+		return head == null;
+	}
+
+	private boolean removeNode(Node<E> node) {
+		boolean removed = false;
+		if (node != null) {
+			if (node == head) {
+				head = head.next;
+			} else {
+				Node<E> currentNode = head.next;
+				while (currentNode.next != null && !removed) {
+					if (currentNode.next.data.equals(node.data)) {
+						removed = true;
+						currentNode.next = currentNode.next.next;
+						node.next = null;
+						node = null;
+						size--;
+					}
+				}
+			}
 		}
-		return false;
+		return removed;
 	}
 
 	private Node<E> getNode(int position) {
@@ -84,6 +92,31 @@ public final class CLinkedList<E> implements CList<E> {
 			current = current.next;
 		}
 		return current;
+	}
+
+	private Node<E> getNode(E element) {
+		Node<E> current = head;
+		while (current.next != null) {
+			if (element.equals(current.data)) {
+				return current;
+			}
+			current = current.next;
+		}
+		return null;
+	}
+
+	private boolean addNode(Node<E> node) {
+		if (head == null) {
+			head = node;
+		} else {
+			Node<E> tempNode = head;
+			while (tempNode.next != null) {
+				tempNode = tempNode.next;
+			}
+			tempNode.next = node;
+		}
+		size++;
+		return true;
 	}
 
 	private static final class Node<E> {
