@@ -26,6 +26,7 @@ target/
 .classpath
 .project
 spring-*/src/main/java/META-INF/MANIFEST.MF
+WORKSPACE
 
 # IDEA artifacts and output dirs
 *.iml

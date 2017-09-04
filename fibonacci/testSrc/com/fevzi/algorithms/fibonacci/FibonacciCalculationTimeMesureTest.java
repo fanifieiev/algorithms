@@ -12,9 +12,9 @@ public class FibonacciCalculationTimeMesureTest {
 		FibonacciEvaluator evaluator = new RecursiveFibonacciEvaluator();
 		
 		Monitor monitor = MonitorFactory.start("FIBONACCI_RECURSIVELY");
-		long result = evaluator.evaluate(50);
+		long result = evaluator.evaluate(40);
 		monitor.stop();
-		System.out.println(monitor);
+		System.out.println(String.format("Label: %s, time: %s", monitor.getLabel(), monitor.getAvg()));
 	}
 	
 	@Test
@@ -24,6 +24,6 @@ public class FibonacciCalculationTimeMesureTest {
 		Monitor monitor = MonitorFactory.start("FIBONACCI_LINEARLY");
 		long result = evaluator.evaluate(50);
 		monitor.stop();
-		System.out.println(monitor);
+		System.out.println(String.format("Label: %s, time: %s", monitor.getLabel(), monitor.getAvg()));
 	}
 }

@@ -1,19 +1,19 @@
 package com.fevzi.algorithms.list;
 
-public final class CLinkedList<E> implements CList<E> {
+public final class CSingleLinkedList<E> implements CList<E> {
 
 	private Node<E> head;
 	private int size = 0;
 
-	public CLinkedList() {
+	public CSingleLinkedList() {
 	}
 
-	public CLinkedList(Node<E> node) {
+	public CSingleLinkedList(Node<E> node) {
 		addNode(node);
 	}
 
 	@Override
-	public CLinkedList<E> reverse() {
+	public CSingleLinkedList<E> reverse() {
 		if (head == null || head.next == null) {
 			return this;
 		}
@@ -28,7 +28,7 @@ public final class CLinkedList<E> implements CList<E> {
 			current = next;
 		}
 		current.next = prev;
-		return new CLinkedList<E>(current);
+		return new CSingleLinkedList<E>(current);
 	}
 
 	@Override
@@ -95,6 +95,7 @@ public final class CLinkedList<E> implements CList<E> {
 	}
 
 	private Node<E> getNode(E element) {
+		assert element != null;
 		Node<E> current = head;
 		while (current.next != null) {
 			if (element.equals(current.data)) {
