@@ -32,7 +32,8 @@ public final class CArrayList<E> implements CList<E> {
 
 	@Override
 	public boolean add(E element) {
-		// TODO: implement
+		final int length = elements.length;
+
 		return false;
 	}
 

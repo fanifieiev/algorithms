@@ -1,9 +1,9 @@
 package com.fevzi.algorithms.btree;
 
-import org.junit.Test;
-
 import com.fevzi.algorithms.tree.Node;
 import com.fevzi.algorithms.tree.Tree;
+
+import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -50,6 +50,22 @@ public class BinaryTreeTest {
 		tree.insert(3);
 		tree.insert(12);
 		tree.insert(2);
+		tree.insert(1);
+		tree.insert(2);
+		
+		System.out.println(tree.list());
+	}
+	
+	@Test
+	public void shouldDeleteLeafs() {
+		final Tree<Integer> tree = new BinaryTree<>(10);
+		tree.insert(5);
+		tree.insert(3);
+		tree.insert(12);
+		tree.insert(2);
+		
+		tree.remove(2);
+		tree.remove(12);
 		
 		System.out.println(tree.list());
 	}
