@@ -1,5 +1,4 @@
-from com.fevzi.algorithms.btree.TreeNode import TreeNode
-
+from binarytree.binarytree.TreeNode import TreeNode
 
 class BinaryTree:
     def __init__(self, value):
@@ -69,7 +68,7 @@ class BinaryTree:
         return node
 
     def findInternal(self, node: TreeNode, value: object) -> TreeNode:
-        if (node is None or node.value == value):
+        if node is None or node.value == value:
             return node
         else:
             if (value < node.value):
