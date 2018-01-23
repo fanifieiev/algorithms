@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.fevzi.algorithms.string.StringReverseTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-01-23T18:45:16" hostname="EPCATORW0286" time="0.003">
-  <properties/>
-  <testcase name="shouldReverseStringWithSwapping" classname="com.fevzi.algorithms.string.StringReverseTest" time="0.002"/>
-  <testcase name="shouldReverseStringRecursively" classname="com.fevzi.algorithms.string.StringReverseTest" time="0.0"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
