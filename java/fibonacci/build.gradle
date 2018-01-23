@@ -1,0 +1,25 @@
+apply plugin: 'java'
+archivesBaseName = "fibonacci-algorithms"
+version = '1.0-SNAPSHOT'
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+        }
+    }
+    test {
+      java {
+        srcDirs = ['testSrc']
+      }
+    }
+}
+
+dependencies {
+ testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+repositories {
+  mavenCentral()
+}
+
