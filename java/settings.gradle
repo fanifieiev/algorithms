@@ -1,1 +1,1 @@
-include ":collections", ":equalibility", ":fibonacci", ":sorting", ":string", ":tree"
+include ":collections", ":equalibility", ":fibonacci", ":sorting", ":string", ":tree", ":builders"

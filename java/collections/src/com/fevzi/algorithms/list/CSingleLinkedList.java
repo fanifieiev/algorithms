@@ -2,13 +2,13 @@ package com.fevzi.algorithms.list;
 
 public final class CSingleLinkedList<E> implements CList<E> {
 
-    private Node<E> head;
+    private ListNode<E> head;
     private int size = 0;
 
     public CSingleLinkedList() {
     }
 
-    public CSingleLinkedList(Node<E> node) {
+    public CSingleLinkedList(ListNode<E> node) {
         addNode(node);
     }
 
@@ -17,9 +17,9 @@ public final class CSingleLinkedList<E> implements CList<E> {
         if (head == null || head.next == null) {
             return this;
         }
-        Node<E> prev = null;
-        Node<E> current = head;
-        Node<E> next = null;
+        ListNode<E> prev = null;
+        ListNode<E> current = head;
+        ListNode<E> next = null;
 
         while (current.next != null) {
             next = current.next;
@@ -33,7 +33,7 @@ public final class CSingleLinkedList<E> implements CList<E> {
 
     @Override
     public boolean add(E element) {
-        Node<E> node = new Node<>(element);
+        ListNode<E> node = new ListNode<>(element);
         return addNode(node);
     }
 
@@ -44,19 +44,19 @@ public final class CSingleLinkedList<E> implements CList<E> {
 
     @Override
     public E get(int position) {
-        Node<E> node = getNode(position);
+        ListNode<E> node = getNode(position);
         return node.data;
     }
 
     @Override
     public boolean remove(E element) {
-        Node<E> node = getNode(element);
+        ListNode<E> node = getNode(element);
         return removeNode(node);
     }
 
     @Override
     public boolean remove(int index) {
-        Node<E> node = getNode(index);
+        ListNode<E> node = getNode(index);
         return removeNode(node);
     }
 
@@ -65,13 +65,13 @@ public final class CSingleLinkedList<E> implements CList<E> {
         return head == null;
     }
 
-    private boolean removeNode(Node<E> node) {
+    private boolean removeNode(ListNode<E> node) {
         boolean removed = false;
         if (node != null) {
             if (node == head) {
                 head = head.next;
             } else {
-                Node<E> currentNode = head.next;
+                ListNode<E> currentNode = head.next;
                 while (currentNode.next != null && !removed) {
                     if (currentNode.next.data.equals(node.data)) {
                         removed = true;
@@ -86,17 +86,17 @@ public final class CSingleLinkedList<E> implements CList<E> {
         return removed;
     }
 
-    private Node<E> getNode(int position) {
-        Node<E> current = head;
+    private ListNode<E> getNode(int position) {
+        ListNode<E> current = head;
         for (int i = 0; i < position; i++) {
             current = current.next;
         }
         return current;
     }
 
-    private Node<E> getNode(E element) {
+    private ListNode<E> getNode(E element) {
         assert element != null;
-        for (Node<E> current = head; current != null; current = current.next) {
+        for (ListNode<E> current = head; current != null; current = current.next) {
             if (element.equals(current.data)) {
                 return current;
             }
@@ -104,11 +104,11 @@ public final class CSingleLinkedList<E> implements CList<E> {
         return null;
     }
 
-    private boolean addNode(Node<E> node) {
+    private boolean addNode(ListNode<E> node) {
         if (head == null) {
             head = node;
         } else {
-            Node<E> tempNode = head;
+            ListNode<E> tempNode = head;
             while (tempNode.next != null) {
                 tempNode = tempNode.next;
             }
@@ -118,11 +118,11 @@ public final class CSingleLinkedList<E> implements CList<E> {
         return true;
     }
 
-    private static final class Node<E> {
+    private static final class ListNode<E> {
         E data;
-        Node<E> next;
+        ListNode<E> next;
 
-        Node(E data) {
+        ListNode(E data) {
             super();
             this.data = data;
         }
