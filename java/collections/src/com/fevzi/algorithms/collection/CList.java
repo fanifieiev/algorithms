@@ -1,4 +1,4 @@
-package com.fevzi.algorithms.list;
+package com.fevzi.algorithms.collection;
 
 public interface CList<E> {
 

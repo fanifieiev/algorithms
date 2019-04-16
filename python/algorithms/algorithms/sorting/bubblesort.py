@@ -13,7 +13,4 @@ class BubbleSort(Sort):
         return arr
 
     def sort_list(self, node: ListNode[T]) -> ListNode[T]:
-        current: ListNode[T] = node
-
-        while current and current.next:
-            pass
+        pass

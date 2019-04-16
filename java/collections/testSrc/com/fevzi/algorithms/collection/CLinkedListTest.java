@@ -1,8 +1,5 @@
-package com.fevzi.algorithms.list;
+package com.fevzi.algorithms.collection;
 
-import org.junit.Test;
-
-import com.fevzi.algorithms.list.CSingleLinkedList;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class CLinkedListTest {

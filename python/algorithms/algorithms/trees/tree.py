@@ -4,6 +4,31 @@ K = TypeVar("T")
 V = TypeVar("V")
 
 
+class BiTreeNode(Generic[V]):
+    def __init__(self, value: V):
+        self.value: V = value
+        self.left: BiTreeNode[V] = None
+        self.right: BiTreeNode[V] = None
+
+    @staticmethod
+    def add_to_node(node, value: V):
+        if value < node.value:
+            if node.left is None:
+                node.left = BiTreeNode(value)
+                return node.left
+            else:
+                return BiTreeNode.add_to_node(node.left, value)
+        else:
+            if node.right is None:
+                node.right = BiTreeNode(value)
+                return node.right
+            else:
+                return BiTreeNode.add_to_node(node.right, value)
+
+    def __str__(self):
+        return f"Node: ({self.value})"
+
+
 class TreeNode(Generic[K, V]):
     def __init__(self, key: K, value: V):
         self.value: V = value
